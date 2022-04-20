@@ -36,7 +36,7 @@ const Login = () => {
       .signInWithEmailAndPassword(username, password)
       .then(userCredentials => {
         const user = userCredentials.user;
-        console.log('Logged in with:', user.email);
+        console.log('Logged in with:', user.username);
       })
       .catch(error => alert(error.message))
   }
@@ -45,7 +45,7 @@ const Login = () => {
       .createUserWithEmailAndPassword(username, password)
       .then(userCredentials => {
         const user = userCredentials.user;
-        console.log('Registered with:', user.email);
+        console.log('Registered with:', user.username);
       })
       .catch(error => alert(error.message))
       
