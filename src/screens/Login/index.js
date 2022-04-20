@@ -26,7 +26,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const Login = () => {
-  
+
   const [username, setUsername]= useState('');
   const [password, setPassword]= useState('');
   
@@ -39,6 +39,8 @@ const Login = () => {
         console.log('Logged in with:', user.username);
       })
       .catch(error => alert(error.message))
+      const idTokenResult = firebaseConfig.auth().getIdTokenResult();
+      console.log('User token is ',idTokenResult.token);
   }
   const onRegisterPressed = () => {
     auth()
